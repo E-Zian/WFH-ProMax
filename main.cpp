@@ -25,7 +25,7 @@ void setHook() {
             std::cout << "Hook set error, Exiting" << std::endl;
             std::exit(0);
     }
-
+    std::cout << "Hook set successfully , press any key to exit" << std::endl;
     MSG msg;
     while (GetMessage(&msg, nullptr, 0, 0)) {
         // TranslateMessage(&msg);
@@ -56,10 +56,8 @@ int main() {
     std::jthread listenerThread(setHook);
 
     while (!keyPressed) {
-        std::cout <<"Moving left \n";
         moveLeft();
 
-        std::cout <<"Moving right \n";
         moveRight();
     }
 
