@@ -6,6 +6,7 @@
 HHOOK windowHookId;
 
 std::atomic<bool> keyPressed{false};
+std::atomic<bool> hookReady{ false };
 
 LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
     if (nCode >=0) {
@@ -25,7 +26,9 @@ void setHook() {
             std::cout << "Hook set error, Exiting" << std::endl;
             std::exit(0);
     }
-    std::cout << "Hook set successfully , press any key to exit" << std::endl;
+    hookReady = true;
+    std::cout << "Hook set successfully" << std::endl;
+    std::cout << "Press any key to exit" << std::endl;
     MSG msg;
     while (GetMessage(&msg, nullptr, 0, 0)) {
         // TranslateMessage(&msg);
@@ -54,6 +57,10 @@ void moveRight() {
 
 int main() {
     std::jthread listenerThread(setHook);
+
+    while (!hookReady) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
 
     while (!keyPressed) {
         moveLeft();
