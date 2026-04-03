@@ -62,10 +62,11 @@ int main() {
         std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
+    bool alternate = true;
     while (!keyPressed) {
-        moveLeft();
-
-        moveRight();
+        alternate ? moveLeft() : moveRight();
+        alternate = !alternate;
+        std::this_thread::sleep_for(std::chrono::seconds(2));
     }
 
     PostThreadMessageA(GetThreadId(listenerThread.native_handle()), WM_QUIT, 0, 0);
