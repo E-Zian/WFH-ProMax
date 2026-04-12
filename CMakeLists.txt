@@ -3,4 +3,8 @@ project(WFH_Promax)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(WFH_Promax main.cpp)
+add_executable(WFH_Promax main.cpp
+        MouseIdler.cpp
+        MouseIdler.h
+        MouseIdler.cpp
+        MouseIdler.h)
