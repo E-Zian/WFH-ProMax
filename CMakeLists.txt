@@ -8,3 +8,8 @@ add_executable(WFH_Promax main.cpp
         MouseIdler.h
         MouseIdler.cpp
         MouseIdler.h)
+
+target_include_directories(WFH_Promax
+        PRIVATE
+        ${ASIO_ROOT}
+)

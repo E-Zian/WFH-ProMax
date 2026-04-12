@@ -16,9 +16,11 @@ class MouseIdler {
         static MouseIdler instance {};
         return instance;
     }
+
     void operator =(MouseIdler&) = delete;
     MouseIdler(MouseIdler const&) = delete;
     MouseIdler(MouseIdler&&) = delete;
+
     void move() ;
 
     private:
