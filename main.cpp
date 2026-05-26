@@ -14,6 +14,5 @@ bool systemIdle(const int idleForSeconds) {
 
 int main() {
 
-   std::cout << "Hello world!" << "\n";
    MouseIdler::getInstance().move();
 }
