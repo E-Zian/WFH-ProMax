@@ -1,6 +1,6 @@
 # WFH-ProMax
  
-A Windows application that simulates mouse movement to prevent system idle. Moves the mouse left and right until a keyboard key is pressed.
+A Windows application that simulates mouse movement to prevent system idle. Opens Gmail and moves the mouse left and right until a keyboard key is pressed.
  
 ## Prerequisites
  
