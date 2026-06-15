@@ -13,13 +13,13 @@ A Windows application that simulates mouse movement to prevent system idle. Open
 git clone https://github.com/E-Zian/WFH-ProMax.git
 cd WFH-ProMax
 cmake -B build
-cmake --build build
+cmake --build build --config Release
 ```
  
 ## Running
  
 ```bash
-./build/WFH-ProMax.exe
+.\build\Release\WFH_Promax.exe
 ```
  
 Press any keyboard key to stop the application.
